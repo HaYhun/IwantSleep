@@ -6,7 +6,7 @@
 //
 // SUPABASE_URL: https://xxxx.supabase.co
 // SUPABASE_ANON_KEY: eyJ...
-const SUPABASE_URL = "https://qxogiclmdiyvobbxwzjm.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://qxogiclmdiyvobbxwzjm.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_ktxfZAXp2SBbLj-MbUAfUQ_luMiU6yo";
 
 const configured =
