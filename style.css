@@ -1,0 +1,54 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f6fb;
+  color: #172033;
+}
+.container { max-width: 1050px; margin: 0 auto; padding: 32px 18px 60px; }
+.card {
+  background: white;
+  border: 1px solid #e4e7ef;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(20, 30, 50, .05);
+}
+h1 { margin: 0 0 6px; }
+h2 { margin-top: 0; }
+.sub { color: #687086; margin-top: 0; }
+.hidden { display: none !important; }
+.tabs { display: flex; gap: 8px; margin: 22px 0; }
+.tab, button {
+  border: 0; border-radius: 10px; padding: 11px 15px;
+  cursor: pointer; font-size: 14px;
+}
+.tab { background: #eef1f7; }
+.tab.active { background: #172033; color: white; }
+.primary { background: #172033; color: white; width: 100%; margin-top: 8px; }
+.secondary { background: #eef1f7; color: #172033; }
+label { display: block; font-size: 13px; font-weight: 700; margin: 15px 0 7px; }
+input {
+  width: 100%; padding: 12px; border: 1px solid #d8dce6;
+  border-radius: 10px; font-size: 15px;
+}
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.topbar, .section-head { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stats div { background: #f5f7fb; padding: 15px; border-radius: 12px; }
+.stats span { display: block; color: #687086; font-size: 12px; }
+.stats strong { display: block; font-size: 22px; margin-top: 5px; }
+.message { min-height: 20px; color: #b42318; }
+.analysis { line-height: 1.6; }
+.note { color: #606a7d; line-height: 1.6; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: center; padding: 11px 8px; border-bottom: 1px solid #edf0f5; white-space: nowrap; }
+th { color: #687086; font-size: 13px; }
+.delete { background: #fff0f0; color: #b42318; padding: 7px 10px; }
+@media (max-width: 760px) {
+  .grid { grid-template-columns: 1fr; }
+  .two { grid-template-columns: 1fr; }
+  .topbar { align-items: flex-start; }
+}

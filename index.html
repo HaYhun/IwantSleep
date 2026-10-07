@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep Balance</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <main class="container">
+    <section id="auth-card" class="card">
+      <h1>Sleep Balance</h1>
+      <p class="sub">개인 수면 데이터를 기록하고 분석하는 웹 프로젝트</p>
+
+      <div class="tabs">
+        <button id="login-tab" class="tab active">로그인</button>
+        <button id="signup-tab" class="tab">회원가입</button>
+      </div>
+
+      <form id="auth-form">
+        <label>이메일</label>
+        <input id="email" type="email" placeholder="example@email.com" required>
+
+        <label>비밀번호</label>
+        <input id="password" type="password" placeholder="6자 이상" minlength="6" required>
+
+        <button class="primary" type="submit" id="auth-button">로그인</button>
+      </form>
+      <p id="auth-message" class="message"></p>
+    </section>
+
+    <section id="app-card" class="hidden">
+      <header class="topbar">
+        <div>
+          <h1>나의 Sleep Balance</h1>
+          <p id="user-email" class="sub"></p>
+        </div>
+        <button id="logout-button" class="secondary">로그아웃</button>
+      </header>
+
+      <div class="grid">
+        <section class="card">
+          <h2>오늘의 수면 기록</h2>
+          <form id="sleep-form">
+            <label>수면 날짜</label>
+            <input id="date" type="date" required>
+
+            <div class="two">
+              <div>
+                <label>취침 시간</label>
+                <input id="bedtime" type="time" required>
+              </div>
+              <div>
+                <label>기상 시간</label>
+                <input id="wake-time" type="time" required>
+              </div>
+            </div>
+
+            <label>기상 후 컨디션 (1~5)</label>
+            <input id="condition" type="number" min="1" max="5" placeholder="선택: 1~5">
+
+            <button class="primary" type="submit">수면 기록 저장</button>
+          </form>
+          <p id="record-message" class="message"></p>
+        </section>
+
+        <section class="card">
+          <h2>최근 7일 분석</h2>
+          <div class="stats">
+            <div><span>평균 수면</span><strong id="avg-sleep">-</strong></div>
+            <div><span>수면 부족 누적</span><strong id="sleep-debt">-</strong></div>
+            <div><span>취침시간 변동</span><strong id="bedtime-std">-</strong></div>
+            <div><span>Sleep Score</span><strong id="score">-</strong></div>
+          </div>
+          <p id="analysis-text" class="analysis"></p>
+        </section>
+      </div>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>내 수면 기록</h2>
+          <button id="refresh-button" class="secondary">새로고침</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>날짜</th>
+                <th>취침</th>
+                <th>기상</th>
+                <th>수면</th>
+                <th>부족량</th>
+                <th>컨디션</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="records-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>프로젝트 모델</h2>
+        <p class="note">
+          이 버전에서는 청소년의 목표 수면시간을 프로젝트상 8시간으로 두고,
+          최근 7일의 수면시간·취침시간 규칙성을 이용해 지표를 계산합니다.
+          실제 생리학적 Process S/C를 직접 측정하는 값이 아니라 연구용 모델입니다.
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
